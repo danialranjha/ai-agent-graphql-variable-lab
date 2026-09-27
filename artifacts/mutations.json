@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "mutation": "interpolate_again",
+      "detected": true,
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        },
+        {
+          "field": "__typename",
+          "response_key": "marker"
+        },
+        {
+          "field": "export",
+          "response_key": "spare"
+        }
+      ],
+      "resolver_ids": [
+        "demo",
+        "demo"
+      ],
+      "errors": []
+    },
+    {
+      "mutation": "omit_variables",
+      "detected": true,
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "resolver_ids": [],
+      "errors": [
+        "Variable '$exportId' of required type 'ID!' was not provided.\n\nGraphQL request:2:27\n1 |\n2 |     query GetExportStatus($exportId: ID!) {\n  |                           ^\n3 |       export(id: $exportId) {"
+      ]
+    }
+  ],
+  "all_detected": true
+}

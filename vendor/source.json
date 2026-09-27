@@ -1,0 +1,24 @@
+[
+  {
+    "mode": "original",
+    "commit": "3c5ecc1b6bfad8014e815f632dd302d2759dddb5",
+    "url": "https://github.com/rapid7/rapid7-bulk-export-mcp/blob/3c5ecc1b6bfad8014e815f632dd302d2759dddb5/src/export_manager.py",
+    "source_sha256": "e7141481a4fa64292cb73a968a59542d604aa4e4415bf42ccbcd1834f5a4133d",
+    "source_git_blob": "8beb681a27a8b67aa07e7a3d38e0f0b6e2311f04",
+    "start_line": 262,
+    "end_line": 316,
+    "extract_sha256": "3296bd3c5e3851c51d5903488dc7212643ec96bbad3ce6cd37217a3d54d4c32b",
+    "adaptation": "Exact function bytes; globals bind send_graphql_request to local capture, parser and invented schema. No upstream imports or HTTP."
+  },
+  {
+    "mode": "fixed",
+    "commit": "a14e4ff84cbbcc09c565f425f60f83c5d1bb631b",
+    "url": "https://github.com/rapid7/rapid7-bulk-export-mcp/blob/a14e4ff84cbbcc09c565f425f60f83c5d1bb631b/src/export_manager.py",
+    "source_sha256": "ef1a89506ff6f0b09f5e4f7dc6c7821d303d5a037a64a36a7d0ecc5446ef92fa",
+    "source_git_blob": "cefa9ef3b986b580c683136b3fc3fedf89f0dd02",
+    "start_line": 262,
+    "end_line": 322,
+    "extract_sha256": "f37ca0b49c85bca531b3b1629513f33d36c5f0c9db00ac71a2f0996c88e886c0",
+    "adaptation": "Exact function bytes; globals bind send_graphql_request to local capture, parser and invented schema. No upstream imports or HTTP."
+  }
+]

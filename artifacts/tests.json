@@ -1,0 +1,11 @@
+{
+  "command": "python -m unittest -v",
+  "tests": 8,
+  "failures": 0,
+  "errors": 0,
+  "result": "passed",
+  "python": "3.11.6",
+  "graphql_core": "3.2.6",
+  "mutation_checks": 2,
+  "scope": "offline component tests"
+}

@@ -1,0 +1,973 @@
+{
+  "scope": "released function extracts; real local GraphQL parser; synthetic schema",
+  "graphql_core": "3.2.6",
+  "fixture_count": 10,
+  "row_count": 20,
+  "schema": "\ntype Part { prefix: String!, urls: [String!]! }\ntype Export { id: ID!, status: String!, dataset: String!, timestamp: String!, result: [Part!]! }\ntype Query { export(id: ID!): Export! }\n",
+  "rows": [
+    {
+      "mode": "original",
+      "fixture": "ordinary",
+      "identifier": "demo",
+      "request": {
+        "query": "\n    {\n      export(id: \"demo\") {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": null
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "demo",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "demo",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "demo"
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "fixed",
+      "fixture": "ordinary",
+      "identifier": "demo",
+      "request": {
+        "query": "\n    query GetExportStatus($exportId: ID!) {\n      export(id: $exportId) {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": {
+          "exportId": "demo"
+        }
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "demo",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "demo",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "demo"
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "original",
+      "fixture": "unicode",
+      "identifier": "café-東京",
+      "request": {
+        "query": "\n    {\n      export(id: \"café-東京\") {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": null
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "café-東京",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "café-東京",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "café-東京"
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "fixed",
+      "fixture": "unicode",
+      "identifier": "café-東京",
+      "request": {
+        "query": "\n    query GetExportStatus($exportId: ID!) {\n      export(id: $exportId) {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": {
+          "exportId": "café-東京"
+        }
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "café-東京",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "café-東京",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "café-東京"
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "original",
+      "fixture": "empty",
+      "identifier": "",
+      "request": {
+        "query": "\n    {\n      export(id: \"\") {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": null
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        ""
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "fixed",
+      "fixture": "empty",
+      "identifier": "",
+      "request": {
+        "query": "\n    query GetExportStatus($exportId: ID!) {\n      export(id: $exportId) {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": {
+          "exportId": ""
+        }
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        ""
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "original",
+      "fixture": "plain_marker_words",
+      "identifier": "marker __typename",
+      "request": {
+        "query": "\n    {\n      export(id: \"marker __typename\") {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": null
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "marker __typename",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "marker __typename",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "marker __typename"
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "fixed",
+      "fixture": "plain_marker_words",
+      "identifier": "marker __typename",
+      "request": {
+        "query": "\n    query GetExportStatus($exportId: ID!) {\n      export(id: $exportId) {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": {
+          "exportId": "marker __typename"
+        }
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "marker __typename",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "marker __typename",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "marker __typename"
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "original",
+      "fixture": "quote",
+      "identifier": "demo\"note",
+      "request": {
+        "query": "\n    {\n      export(id: \"demo\"note\") {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": null
+      },
+      "parse_ok": false,
+      "root_fields": [],
+      "validation_errors": [],
+      "errors": [
+        "Syntax Error: Unterminated string.\n\nGraphQL request:3:32\n2 |     {\n3 |       export(id: \"demo\"note\") {\n  |                                ^\n4 |         id"
+      ],
+      "data": null,
+      "function_result": null,
+      "function_error": "ValueError: local GraphQL parse failed",
+      "resolver_ids": [],
+      "exact_single_identifier": false
+    },
+    {
+      "mode": "fixed",
+      "fixture": "quote",
+      "identifier": "demo\"note",
+      "request": {
+        "query": "\n    query GetExportStatus($exportId: ID!) {\n      export(id: $exportId) {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": {
+          "exportId": "demo\"note"
+        }
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "demo\"note",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "demo\"note",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "demo\"note"
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "original",
+      "fixture": "backslash_n",
+      "identifier": "demo\\nnext",
+      "request": {
+        "query": "\n    {\n      export(id: \"demo\\nnext\") {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": null
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "demo\nnext",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "demo\nnext",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "demo\nnext"
+      ],
+      "exact_single_identifier": false
+    },
+    {
+      "mode": "fixed",
+      "fixture": "backslash_n",
+      "identifier": "demo\\nnext",
+      "request": {
+        "query": "\n    query GetExportStatus($exportId: ID!) {\n      export(id: $exportId) {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": {
+          "exportId": "demo\\nnext"
+        }
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "demo\\nnext",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "demo\\nnext",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "demo\\nnext"
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "original",
+      "fixture": "literal_newline",
+      "identifier": "demo\nnext",
+      "request": {
+        "query": "\n    {\n      export(id: \"demo\nnext\") {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": null
+      },
+      "parse_ok": false,
+      "root_fields": [],
+      "validation_errors": [],
+      "errors": [
+        "Syntax Error: Unterminated string.\n\nGraphQL request:3:23\n2 |     {\n3 |       export(id: \"demo\n  |                       ^\n4 | next\") {"
+      ],
+      "data": null,
+      "function_result": null,
+      "function_error": "ValueError: local GraphQL parse failed",
+      "resolver_ids": [],
+      "exact_single_identifier": false
+    },
+    {
+      "mode": "fixed",
+      "fixture": "literal_newline",
+      "identifier": "demo\nnext",
+      "request": {
+        "query": "\n    query GetExportStatus($exportId: ID!) {\n      export(id: $exportId) {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": {
+          "exportId": "demo\nnext"
+        }
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "demo\nnext",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "demo\nnext",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "demo\nnext"
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "original",
+      "fixture": "closing_brace",
+      "identifier": "demo}note",
+      "request": {
+        "query": "\n    {\n      export(id: \"demo}note\") {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": null
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "demo}note",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "demo}note",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "demo}note"
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "fixed",
+      "fixture": "closing_brace",
+      "identifier": "demo}note",
+      "request": {
+        "query": "\n    query GetExportStatus($exportId: ID!) {\n      export(id: $exportId) {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": {
+          "exportId": "demo}note"
+        }
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "demo}note",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "demo}note",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "demo}note"
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "original",
+      "fixture": "marker_selection",
+      "identifier": "demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo",
+      "request": {
+        "query": "\n    {\n      export(id: \"demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo\") {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": null
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        },
+        {
+          "field": "__typename",
+          "response_key": "marker"
+        },
+        {
+          "field": "export",
+          "response_key": "spare"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "demo",
+          "status": "COMPLETE",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        },
+        "marker": "Query",
+        "spare": {
+          "id": "demo",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "demo",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "demo",
+        "demo"
+      ],
+      "exact_single_identifier": false
+    },
+    {
+      "mode": "fixed",
+      "fixture": "marker_selection",
+      "identifier": "demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo",
+      "request": {
+        "query": "\n    query GetExportStatus($exportId: ID!) {\n      export(id: $exportId) {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": {
+          "exportId": "demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo"
+        }
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo"
+      ],
+      "exact_single_identifier": true
+    },
+    {
+      "mode": "original",
+      "fixture": "quoted_crafted_twin",
+      "identifier": "This is a quoted test: demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo",
+      "request": {
+        "query": "\n    {\n      export(id: \"This is a quoted test: demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo\") {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": null
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        },
+        {
+          "field": "__typename",
+          "response_key": "marker"
+        },
+        {
+          "field": "export",
+          "response_key": "spare"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "This is a quoted test: demo",
+          "status": "COMPLETE",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        },
+        "marker": "Query",
+        "spare": {
+          "id": "demo",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "This is a quoted test: demo",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "This is a quoted test: demo",
+        "demo"
+      ],
+      "exact_single_identifier": false
+    },
+    {
+      "mode": "fixed",
+      "fixture": "quoted_crafted_twin",
+      "identifier": "This is a quoted test: demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo",
+      "request": {
+        "query": "\n    query GetExportStatus($exportId: ID!) {\n      export(id: $exportId) {\n        id\n        status\n        dataset\n        timestamp\n        result {\n          prefix\n          urls\n        }\n      }\n    }\n    ",
+        "variables": {
+          "exportId": "This is a quoted test: demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo"
+        }
+      },
+      "root_fields": [
+        {
+          "field": "export",
+          "response_key": "export"
+        }
+      ],
+      "parse_ok": true,
+      "validation_errors": [],
+      "data": {
+        "export": {
+          "id": "This is a quoted test: demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo",
+          "status": "COMPLETE",
+          "dataset": "synthetic",
+          "timestamp": "fixed",
+          "result": [
+            {
+              "prefix": "fixture",
+              "urls": []
+            }
+          ]
+        }
+      },
+      "errors": [],
+      "function_result": {
+        "id": "This is a quoted test: demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo",
+        "status": "COMPLETE",
+        "parquetFiles": [],
+        "result": [
+          {
+            "prefix": "fixture",
+            "urls": []
+          }
+        ]
+      },
+      "function_error": null,
+      "resolver_ids": [
+        "This is a quoted test: demo\") { id status result { prefix urls } } marker: __typename spare: export(id: \"demo"
+      ],
+      "exact_single_identifier": true
+    }
+  ]
+}
